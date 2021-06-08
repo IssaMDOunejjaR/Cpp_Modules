@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 19:19:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 19:02:51 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/07 12:51:14 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/07 16:46:07 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-Pony::Pony(std::string name, std::string color)
-{
-	this->name = name;
-	this->color = color;
-	return ;
-}
+#include "Weapon.hpp"
+#include <iostream>
 
-Pony::~Pony(void)
+class HumanA
 {
-	return ;
-}
+	public:
+		std::string		name;
+		Weapon&			_weapon;
+		
+		HumanA(std::string name, Weapon& weapon);
+		~HumanA(void);
+		
+		void	attack(void) const;
+};
 
-void	Pony::ponyIntroduction(void) const
-{
-	std::cout << "Hello, i am " << this->name << ", and my color is " << this->color << std::endl;
-}
+#endif

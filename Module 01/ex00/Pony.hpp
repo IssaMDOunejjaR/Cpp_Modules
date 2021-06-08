@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 19:18:57 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 12:03:42 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/05 18:56:02 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ class Pony
 		std::string		name;
 		std::string		color;
 		
-		Pony(void);
+		Pony(std::string name, std::string color);
 		~Pony(void);
 
-		void	ponyOnTheStack(void);
-		void	ponyOnTheHeap(void);
+		void	ponyIntroduction(void) const;
 };
 
 #endif

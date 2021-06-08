@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 19:19:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 19:02:51 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/06 15:57:41 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/06 16:03:25 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
-Pony::Pony(std::string name, std::string color)
-{
-	this->name = name;
-	this->color = color;
-	return ;
-}
+# include <iostream>
+# include "Zombie.hpp"
 
-Pony::~Pony(void)
+class	ZombieHorde
 {
-	return ;
-}
+	public:
+		ZombieHorde(int numberOfZombies);
+		~ZombieHorde(void);
+};
 
-void	Pony::ponyIntroduction(void) const
-{
-	std::cout << "Hello, i am " << this->name << ", and my color is " << this->color << std::endl;
-}
+#endif

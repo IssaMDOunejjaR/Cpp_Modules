@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 19:19:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 19:02:51 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/07 12:51:52 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/07 16:50:55 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-Pony::Pony(std::string name, std::string color)
-{
-	this->name = name;
-	this->color = color;
-	return ;
-}
+# include <iostream>
+# include "Weapon.hpp"
 
-Pony::~Pony(void)
+class HumanB
 {
-	return ;
-}
+	std::string		_name;
+	Weapon* 		_weapon;
 
-void	Pony::ponyIntroduction(void) const
-{
-	std::cout << "Hello, i am " << this->name << ", and my color is " << this->color << std::endl;
-}
+	public:
+		HumanB(std::string name);
+		~HumanB(void);
+
+		void	attack(void) const;
+		void	setWeapon(Weapon weapon);
+};
+
+#endif

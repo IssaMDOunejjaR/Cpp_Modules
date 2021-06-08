@@ -6,15 +6,14 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:14:55 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 11:56:24 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/05 18:07:58 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 
-# include <iostream>
-# include <iomanip>
+# include "utils.hpp"
 
 class Contact
 {

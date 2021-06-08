@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 19:19:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 19:02:51 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/07 12:51:42 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/07 17:07:24 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "HumanB.hpp"
 
-Pony::Pony(std::string name, std::string color)
+HumanB::HumanB(std::string name)
 {
-	this->name = name;
-	this->color = color;
+	this->_name = name;
 	return ;
 }
 
-Pony::~Pony(void)
+HumanB::~HumanB(void)
 {
 	return ;
 }
 
-void	Pony::ponyIntroduction(void) const
+void	HumanB::attack(void) const
 {
-	std::cout << "Hello, i am " << this->name << ", and my color is " << this->color << std::endl;
+	std::cout << this->_name << " attack with his " << this->_weapon->getType() << std::endl;
+	return ;
+}
+
+void	HumanB::setWeapon(Weapon weapon)
+{
+	this->_weapon = &weapon;
+	return ;
 }

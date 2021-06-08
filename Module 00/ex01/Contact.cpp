@@ -6,11 +6,11 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:36:49 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 11:56:41 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/08 12:04:25 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "utils.hpp"
 
 int		Contact::_instanceNumber = 0;
 
@@ -36,46 +36,68 @@ void	Contact::add(void)
 	
 	std::cout << "First Name: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setFirstName(input);
 
 	std::cout << "Last Name: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setLastName(input);
 
 	std::cout << "Nickname: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setNickname(input);
 
 	std::cout << "Login: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setLogin(input);
 
 	std::cout << "Postal Address: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setPostalAddress(input);
 
 	std::cout << "Email Addres: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setEmailAddress(input);
 
 	std::cout << "Phone Number: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setPhoneNumber(input);
 
 	std::cout << "Birthday Date: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setBirthdayDate(input);
 
 	std::cout << "Favorite Meal: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setFavoriteMeal(input);
 
 	std::cout << "Underwear Color: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setUnderwearColor(input);
 
 	std::cout << "Darkest Secret: ";
 	getline(std::cin, input);
+	if (input.compare("") != 0)
+		input = trimString(input);
 	this->setDarkestSecret(input);
 
 	this->setIndex(Contact::getInstanceNumber());

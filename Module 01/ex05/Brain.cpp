@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 19:19:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 19:02:51 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/07 11:36:59 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/07 13:11:40 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Brain.hpp"
+#include <sstream>
 
-Pony::Pony(std::string name, std::string color)
+std::string		Brain::identify(void) const
 {
-	this->name = name;
-	this->color = color;
-	return ;
-}
-
-Pony::~Pony(void)
-{
-	return ;
-}
-
-void	Pony::ponyIntroduction(void) const
-{
-	std::cout << "Hello, i am " << this->name << ", and my color is " << this->color << std::endl;
+	std::stringstream ss;
+	
+	ss << std::hex << this;
+	return (ss.str());
 }

@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:26:21 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/04 19:06:33 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/08 12:11:17 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,28 @@ int		isAllNum(std::string str)
 		i++;
 	}
 	return (1);
+}
+
+std::string		trimString(std::string str)
+{
+	int i;
+	std::string newStr;
+
+	str = str.substr(str.find_first_not_of(" \t\f\v\n\r"), (str.find_last_not_of(" \t\f\v\n\r") - str.find_first_not_of(" \t\f\v\n\r")) + 1);
+	std::replace(str.begin(), str.end(), '\t', ' ');
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == ' ')
+		{
+			while (str[i] == ' ')
+				i++;
+			newStr.push_back(' ');
+		}
+		newStr.push_back(str[i]);
+		i++;
+	}
+	return (newStr);
 }
 
 int		availableIndex(Contact contact[8], int index)

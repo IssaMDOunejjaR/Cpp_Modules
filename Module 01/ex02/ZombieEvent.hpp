@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 19:19:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/05 19:02:51 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/05 19:20:53 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/06 19:08:59 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 
-Pony::Pony(std::string name, std::string color)
-{
-	this->name = name;
-	this->color = color;
-	return ;
-}
+# include "Zombie.hpp"
 
-Pony::~Pony(void)
+class ZombieEvent
 {
-	return ;
-}
+	std::string type;
+	
+	public:
+		void		setZombieType(std::string type);
+		Zombie*		newZombie(std::string name);
+};
 
-void	Pony::ponyIntroduction(void) const
-{
-	std::cout << "Hello, i am " << this->name << ", and my color is " << this->color << std::endl;
-}
+#endif
