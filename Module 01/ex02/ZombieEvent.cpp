@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 19:20:44 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/07 11:19:14 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/09 10:38:12 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Zombie*		ZombieEvent::newZombie(std::string name)
 
 	zombie->name = name;
 	zombie->type = this->type;
-	zombie->announce();
 	return (zombie);
 }
 

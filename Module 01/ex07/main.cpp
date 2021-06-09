@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:15:11 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/07 20:15:13 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/09 10:56:39 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,44 @@
 
 std::string		replaceString(std::string str, std::string oldStr, std::string newStr)
 {
-	while (str.find(oldStr) != std::string::npos)
-		str = str.replace(str.find(oldStr), oldStr.length(), newStr);
+	size_t pos;
+
+	pos = 0;
+	while (true)
+	{
+		pos = str.find(oldStr, pos);
+		if (pos == std::string::npos)
+			break ;
+		else
+		{
+			str = str.replace(pos, oldStr.length(), newStr);
+			pos++;
+		}
+	}
 	return (str);
 }
 
 int		main(int argc, char **argv)
 {
-	std::ifstream 	file;
-	std::ofstream 	newFile;
 	std::string		str;
 
-	if (argc < 4)
+	if (argc < 4 || argc > 4)
 		std::cout << "Bad arguments!" << std::endl;
 	else
 	{
-		file.open(argv[1], std::fstream::in);
+		std::ifstream 	file(argv[1]);
+		if (file.fail()) {
+			std::cerr << "Error" << std::endl;
+			return (1);
+		}
 		str = argv[1];
-		newFile.open(str.append(".replace"), std::fstream::app);
+		std::ofstream 	newFile(str.append(".replace"));
 		while (std::getline(file, str))
 		{
 			str = replaceString(str, argv[2], argv[3]);
-			std::cout << str << std::endl;
 			newFile << str << std::endl;
 		}
+		file.close();
 	}
 	return (0);
 }

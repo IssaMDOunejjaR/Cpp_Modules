@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:51:52 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/07 16:50:55 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:53:34 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class HumanB
 		~HumanB(void);
 
 		void	attack(void) const;
-		void	setWeapon(Weapon weapon);
+		void	setWeapon(Weapon & weapon);
 };
 
 #endif

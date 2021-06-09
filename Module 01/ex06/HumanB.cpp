@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 12:51:42 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/07 17:07:24 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:54:17 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	HumanB::attack(void) const
 	return ;
 }
 
-void	HumanB::setWeapon(Weapon weapon)
+void	HumanB::setWeapon(Weapon & weapon)
 {
 	this->_weapon = &weapon;
 	return ;

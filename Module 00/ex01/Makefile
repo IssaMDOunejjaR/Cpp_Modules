@@ -6,7 +6,7 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/31 16:08:40 by iounejja          #+#    #+#              #
-#    Updated: 2021/06/05 11:59:18 by iounejja         ###   ########.fr        #
+#    Updated: 2021/06/08 16:11:04 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(EXEC): $(OBJS)
 		ar rcs $(LIB) $(OBJS)
 		$(CC) $(FLAGS) $(LIB) -o $(EXEC)
 
-%.o: %.cpp utils.hpp Contact.class.hpp
+%.o: %.cpp utils.hpp Contact.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

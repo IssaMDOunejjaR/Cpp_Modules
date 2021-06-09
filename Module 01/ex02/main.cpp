@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 19:21:04 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/07 11:23:48 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/09 10:39:10 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,29 +47,28 @@ std::string		randomType(void)
 	return (types[rand() % 10]);
 }
 
-void	randomChump(void)
+void	randomChump(void) // member function
 {
-	
-	ZombieEvent newEvent;
-	Zombie		*zombie;
+	Zombie		zombie;
 
-	newEvent.setZombieType(randomType());
-	zombie = newEvent.newZombie(randomName());
-	delete zombie;
+	zombie.name = randomName();
+	zombie.type = randomType();
+	zombie.announce();
 }
 
 int		main(void)
 {
+	Zombie			*zombie;
+	ZombieEvent		event;
+
+	event.setZombieType(randomType());
+	zombie = event.newZombie(randomName());
+	zombie->announce();
+
 	randomChump();
 	randomChump();
 	randomChump();
-	randomChump();
-	randomChump();
-	randomChump();
-	randomChump();
-	randomChump();
-	randomChump();
-	randomChump();
-	randomChump();
+
+	delete	zombie;
 	return (0);
 }
