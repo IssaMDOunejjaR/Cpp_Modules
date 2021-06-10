@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:15:11 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/09 10:56:39 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/10 12:07:22 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		main(int argc, char **argv)
 	{
 		std::ifstream 	file(argv[1]);
 		if (file.fail()) {
-			std::cerr << "Error" << std::endl;
+			std::cerr << "Can't open the file" << std::endl;
 			return (1);
 		}
 		str = argv[1];
@@ -53,6 +53,7 @@ int		main(int argc, char **argv)
 			newFile << str << std::endl;
 		}
 		file.close();
+		newFile.close();
 	}
 	return (0);
 }

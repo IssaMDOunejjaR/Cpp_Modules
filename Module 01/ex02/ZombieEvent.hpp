@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 19:20:53 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/09 10:38:16 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:28:41 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class ZombieEvent
 	public:
 		void		setZombieType(std::string type);
 		Zombie*		newZombie(std::string name);
+
+		void		randomChump(void) const;
 };
 
 #endif

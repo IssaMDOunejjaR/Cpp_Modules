@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 11:37:36 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/08 12:40:50 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:42:23 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Human
 		Brain const _brain;
 
 		std::string		identify(void) const;
-		Brain const&	getBrain(void);
+		Brain const &	getBrain(void);
 };
 
 #endif
