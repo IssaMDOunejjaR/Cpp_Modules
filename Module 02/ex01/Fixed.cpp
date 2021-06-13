@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:23:35 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/13 11:37:30 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/13 11:40:23 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ Fixed::Fixed(Fixed const & instance)
 	return ;
 }
 
+Fixed::Fixed(int const n)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->setRawBits(n);
+	return ;
+}
+
+Fixed::Fixed(float const n)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_fixedPoint = roundf(n * (1 << this->_bitsNumber));
+	return ;
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor Called" << std::endl;
@@ -41,7 +55,7 @@ Fixed &		Fixed::operator=(Fixed const & instance)
 
 std::ostream &		operator<<(std::ostream & output, Fixed const & instance)
 {
-	output << instance.getRawBits();
+	output << instance.toFloat();
 	return (output);
 }
 
@@ -55,4 +69,14 @@ void	Fixed::setRawBits(int const raw)
 {
 	this->_fixedPoint = raw * (1 << this->_bitsNumber);
 	return ;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->_fixedPoint / (float)(1 << this->_bitsNumber));
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->_fixedPoint / (1 << this->_bitsNumber));
 }
