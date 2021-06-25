@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:23:35 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/13 11:37:30 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/13 14:42:27 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int		Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	this->_fixedPoint = raw * (1 << this->_bitsNumber);
+	this->_fixedPoint = raw;
 	return ;
 }

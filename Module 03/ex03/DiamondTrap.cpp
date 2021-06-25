@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/25 09:22:22 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 10:45:20 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/25 15:01:25 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/25 18:00:51 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int		main(void)
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name)
 {
-	ClapTrap	c1("One");
-	ClapTrap	c2("Two");
-	ClapTrap	c3("Three");
-	
-	c1.attack("Two");
-	c3.attack("One");
-	c2.attack("Three");
-	return (0);
+	this->name = name;
+	this->hitPoints = this->FragTrap::hitPoints;
+	this->energyPoints = this->ScavTrap::energyPoints;
+	this->attackDamage = this->FragTrap::attackDamage;
+	return ;
 }

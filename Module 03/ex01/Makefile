@@ -5,25 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/07 17:14:25 by iounejja          #+#    #+#              #
-#    Updated: 2021/06/25 10:09:37 by iounejja         ###   ########.fr        #
+#    Created: 2021/06/25 09:15:29 by iounejja          #+#    #+#              #
+#    Updated: 2021/06/25 14:34:15 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC 		= clang++ 
-FLAGS	= -Wall -Wextra -Werror
-EXEC	= replace
+CC		= clang++
+FLAGS	= -Wall -Wextra -Werror -std=c++98
+EXEC 	= scavTrap
 LIB		= lib.a
-SRCS	= main.cpp
+SRCS	= main.cpp \
+			ClapTrap.cpp \
+			ScavTrap.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	ar rcs $(LIB) $(OBJS)
-	$(CC) $(FLAGS) $(LIB) -o $(EXEC)
+		ar rcs $(LIB) $(OBJS)
+		$(CC) $(FLAGS) $(LIB) -o $(EXEC)
 
-%.o: %.cpp
+%.o: %.cpp ClapTrap.hpp ScavTrap.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

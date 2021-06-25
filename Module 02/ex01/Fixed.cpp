@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:23:35 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/13 11:40:23 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/13 14:41:41 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed(Fixed const & instance)
 Fixed::Fixed(int const n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->setRawBits(n);
+	this->_fixedPoint = n << this->_bitsNumber;
 	return ;
 }
 
@@ -67,7 +67,7 @@ int		Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	this->_fixedPoint = raw * (1 << this->_bitsNumber);
+	this->_fixedPoint = raw;
 	return ;
 }
 
@@ -78,5 +78,5 @@ float	Fixed::toFloat(void) const
 
 int		Fixed::toInt(void) const
 {
-	return (this->_fixedPoint / (1 << this->_bitsNumber));
+	return (this->_fixedPoint >> this->_bitsNumber);
 }

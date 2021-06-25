@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/25 09:22:22 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 10:45:20 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/25 14:45:57 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/25 14:57:40 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FLAGTRAP_HPP
+# define FLAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int		main(void)
+class	FlagTrap: public ClapTrap
 {
-	ClapTrap	c1("One");
-	ClapTrap	c2("Two");
-	ClapTrap	c3("Three");
-	
-	c1.attack("Two");
-	c3.attack("One");
-	c2.attack("Three");
-	return (0);
-}
+	public:
+		FlagTrap(std::string name);
+		FlagTrap(FlagTrap & instance);
+		~FlagTrap(void);
+
+		FlagTrap &	operator=(FlagTrap const & instance);
+
+		void	highFivesGuys(void);
+};
+
+#endif

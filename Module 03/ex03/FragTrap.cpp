@@ -5,28 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 18:24:57 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/12 20:09:42 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/25 14:45:33 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/25 16:14:04 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
+	std::cout << "This time it'll be awesome, I promise!" << std::endl;
 	this->hitPoints = 100;
-	this->maxHintPoints = 100;
 	this->energyPoints = 100;
-	this->maxEnergyPoints = 100;
-	this->level = 1;
-	this->name = name;
-	this->meleeAttackDamage = 30;
-	this->rangedAttackDamage = 20;
-	this->armorDamageReduction = 5;
+	this->attackDamage = 30;
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap & instance)
+FragTrap::FragTrap(FragTrap & instance): ClapTrap(instance.name)
 {
 	*this = instance;
 	return ;
@@ -34,25 +29,20 @@ FragTrap::FragTrap(FragTrap & instance)
 
 FragTrap::~FragTrap(void)
 {
+	std::cout << "You got me!" << std::endl;
 	return ;
 }
 
 FragTrap &	FragTrap::operator=(FragTrap const & instance)
 {
-	this->hitPoints = instance.hitPoints;
-	this->maxHintPoints = instance.maxHintPoints;
-	this->energyPoints = instance.energyPoints;
-	this->maxEnergyPoints = instance.maxEnergyPoints;
-	this->level = instance.level;
 	this->name = instance.name;
-	this->meleeAttackDamage = instance.meleeAttackDamage;
-	this->rangedAttackDamage = instance.rangedAttackDamage;
-	this->armorDamageReduction = instance.armorDamageReduction;
+	this->hitPoints = instance.hitPoints;
+	this->energyPoints = instance.energyPoints;
 	return (*this);
 }
 
-std::ostream &	operator<<(std::ostream & output, FragTrap const & instance)
+void	FragTrap::highFivesGuys(void)
 {
-	return (output);
+	std::cout << "Gimme five!" << std::endl;
+	return ;
 }
-

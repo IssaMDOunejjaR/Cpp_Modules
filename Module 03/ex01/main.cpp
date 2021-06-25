@@ -5,28 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 19:21:42 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/13 14:45:46 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/25 09:22:22 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/25 14:34:02 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
 
-int 	main(void)
+int		main(void)
 {
-	Fixed a;
-	Fixed const b(10);
-	Fixed const c(42.42f);
-	Fixed const d(b);
-
-	a = Fixed(1234.4321f);
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	ScavTrap	c1("One");
+	ScavTrap	c2("Two");
+	ScavTrap	c3("Three");
+	
+	c1.attack("Two");
+	c3.attack("One");
+	c2.attack("Three");
 	return (0);
 }
