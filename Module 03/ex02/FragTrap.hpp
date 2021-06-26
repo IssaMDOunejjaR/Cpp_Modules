@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:45:57 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 14:57:40 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:26:53 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLAGTRAP_HPP
-# define FLAGTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class	FlagTrap: public ClapTrap
+class	FragTrap: public ClapTrap
 {
 	public:
-		FlagTrap(std::string name);
-		FlagTrap(FlagTrap & instance);
-		~FlagTrap(void);
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap(FragTrap & instance);
+		~FragTrap(void);
 
-		FlagTrap &	operator=(FlagTrap const & instance);
+		FragTrap &	operator=(FragTrap const & instance);
 
 		void	highFivesGuys(void);
 };

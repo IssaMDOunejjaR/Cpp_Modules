@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:01:14 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 18:00:28 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:15:30 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,19 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class	DiamondTrap: virtual public FragTrap, virtual public ScavTrap
+class	DiamondTrap: public ScavTrap, public FragTrap
 {
 	std::string		name;
-	// int				hitPoints;
-	// int				energyPoints;
-	// int				attackDamage;
 
 	public:
+		DiamondTrap(void);
 		DiamondTrap(std::string name);
 		DiamondTrap(DiamondTrap & instance);
 		~DiamondTrap(void);
 
 		DiamondTrap &	operator=(DiamondTrap const & instance);
 
+		void	attack(std::string const & target);
 		void	whoAmI(void);
 };
 

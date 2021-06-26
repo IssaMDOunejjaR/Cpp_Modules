@@ -6,11 +6,18 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 10:50:52 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 14:37:11 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:18:27 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void)
+{
+	std::cout << "Recompiling my combat code!" << std::endl;
+	this->energyPoints = 50;
+	return ;
+}
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {

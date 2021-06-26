@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 10:50:44 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 17:59:17 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 14:46:04 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class	ScavTrap: virtual public ClapTrap
 {
 	public:
+		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap & instance);
 		~ScavTrap(void);

@@ -6,11 +6,20 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:22:19 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 10:49:06 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 14:59:21 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "Let's get this party started!" << std::endl;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string name)
 {

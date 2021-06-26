@@ -6,11 +6,19 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:45:33 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 16:14:04 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:18:30 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(void)
+{
+	std::cout << "This time it'll be awesome, I promise!" << std::endl;
+	this->hitPoints = 100;
+	this->attackDamage = 30;
+	return ;
+}
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {

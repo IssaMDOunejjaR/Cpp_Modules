@@ -6,13 +6,13 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/25 09:15:29 by iounejja          #+#    #+#              #
-#    Updated: 2021/06/25 14:34:15 by iounejja         ###   ########.fr        #
+#    Updated: 2021/06/26 18:33:50 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
-EXEC 	= scavTrap
+EXEC 	= scavtrap
 LIB		= lib.a
 SRCS	= main.cpp \
 			ClapTrap.cpp \

@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:15:26 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 16:14:58 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 14:45:11 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	ClapTrap
 		int				attackDamage;
 
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap & instance);
 		~ClapTrap(void);

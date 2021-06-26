@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:45:33 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/25 14:59:18 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:27:28 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
-FlagTrap::FlagTrap(std::string name): ClapTrap(name)
+FragTrap::FragTrap(void)
 {
 	std::cout << "This time it'll be awesome, I promise!" << std::endl;
 	this->hitPoints = 100;
@@ -21,19 +21,28 @@ FlagTrap::FlagTrap(std::string name): ClapTrap(name)
 	return ;
 }
 
-FlagTrap::FlagTrap(FlagTrap & instance): ClapTrap(instance.name)
+FragTrap::FragTrap(std::string name): ClapTrap(name)
+{
+	std::cout << "This time it'll be awesome, I promise!" << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+	return ;
+}
+
+FragTrap::FragTrap(FragTrap & instance): ClapTrap(instance.name)
 {
 	*this = instance;
 	return ;
 }
 
-FlagTrap::~FlagTrap(void)
+FragTrap::~FragTrap(void)
 {
 	std::cout << "You got me!" << std::endl;
 	return ;
 }
 
-FlagTrap &	FlagTrap::operator=(FlagTrap const & instance)
+FragTrap &	FragTrap::operator=(FragTrap const & instance)
 {
 	this->name = instance.name;
 	this->hitPoints = instance.hitPoints;
@@ -41,7 +50,7 @@ FlagTrap &	FlagTrap::operator=(FlagTrap const & instance)
 	return (*this);
 }
 
-void	FlagTrap::highFivesGuys(void)
+void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "Gimme five!" << std::endl;
 	return ;
