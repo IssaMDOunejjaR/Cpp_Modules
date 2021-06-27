@@ -6,12 +6,12 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/25 09:15:29 by iounejja          #+#    #+#              #
-#    Updated: 2021/06/25 10:10:19 by iounejja         ###   ########.fr        #
+#    Updated: 2021/06/27 09:12:53 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= clang++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror
 EXEC 	= claptrap
 LIB		= lib.a
 SRCS	= main.cpp \

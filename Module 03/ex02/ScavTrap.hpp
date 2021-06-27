@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 10:50:44 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/26 15:25:02 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/27 10:01:43 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	ScavTrap: public ClapTrap
 
 		ScavTrap &		operator=(ScavTrap const & instance);
 
+		void	attack(std::string target);
 		void	guardGate(void);
 };
 

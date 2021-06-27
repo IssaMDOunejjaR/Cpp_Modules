@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 10:50:52 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/26 15:26:11 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/27 09:16:37 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ ScavTrap &		ScavTrap::operator=(ScavTrap const & instance)
 	this->energyPoints = instance.energyPoints;
 	this->attackDamage = instance.attackDamage;
 	return (*this);
+}
+
+void	ScavTrap::attack(std::string target)
+{
+	std::cout << this->name << " attack " << target << " causing " << this->attackDamage << " damage!" << std::endl;
+	return ;
 }
 
 void	ScavTrap::guardGate(void)

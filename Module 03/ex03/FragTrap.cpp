@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:45:33 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/26 15:18:30 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/27 09:20:38 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap & instance): ClapTrap(instance.name)
+FragTrap::FragTrap(FragTrap & instance)
 {
 	*this = instance;
 	return ;
