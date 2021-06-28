@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 10:02:17 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 10:10:52 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/28 12:13:38 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/28 13:50:34 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-# define PLASMARIFLE_HPP
+#ifndef ISQUAD_HPP
+# define ISQUAD_HPP
 
-# include <iostream>
-# include "AWeapon.hpp"
+# include "ISpaceMarine.hpp"
 
-class	PlasmaRifle: public AWeapon
+class	ISquad
 {
 	public:
-		PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle & instance);
-		~PlasmaRifle(void);
-
-		PlasmaRifle &	operator=(PlasmaRifle const & instance);
-
-		void	attack(void) const;
+		virtual ~ISquad(void) {}
+		virtual int getCount(void) const = 0;
+		virtual ISpaceMarine* getUnit(int) const = 0;
+		virtual int push(ISpaceMarine*) = 0;
 };
 
 #endif

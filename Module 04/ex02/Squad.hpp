@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
+/*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 10:02:17 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 10:10:52 by iounejja         ###   ########.fr       */
+/*   Created: 2021/06/28 12:44:56 by iounejja          #+#    #+#             */
+/*   Updated: 2021/06/28 16:53:51 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_HPP
-# define PLASMARIFLE_HPP
+#ifndef SQUAD_HPP
+# define SQUAD_HPP
 
 # include <iostream>
-# include "AWeapon.hpp"
+# include "ISquad.hpp"
 
-class	PlasmaRifle: public AWeapon
+class	Squad: public ISquad
 {
+	typedef struct	s_units
+	{
+		ISpaceMarine 	*unit;
+		struct	s_units	*next;
+	}				t_units;
+	t_units		*units;
+	int			numberOfUnits;
+
 	public:
-		PlasmaRifle(void);
-		PlasmaRifle(PlasmaRifle & instance);
-		~PlasmaRifle(void);
+		Squad(void);
+		Squad(Squad & instance);
+		~Squad(void);
 
-		PlasmaRifle &	operator=(PlasmaRifle const & instance);
+		Squad &		operator=(Squad const & instance);
 
-		void	attack(void) const;
+		int				getCount(void) const;
+		ISpaceMarine *	getUnit(int index) const;
+		int				push(ISpaceMarine * instance);
 };
 
 #endif

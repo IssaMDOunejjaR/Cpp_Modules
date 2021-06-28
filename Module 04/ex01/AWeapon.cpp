@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:16:31 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/27 19:30:10 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/28 10:00:58 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,17 @@ AWeapon &	AWeapon::operator=(AWeapon const & instance)
 	return (*this);
 }
 
-std::string const &		AWeapon::getName
+std::string const &		AWeapon::getName(void) const
+{
+	return (this->name);
+}
+
+int		AWeapon::getAPCost(void) const
+{
+	return (this->apcost);
+}
+
+int		AWeapon::getDamage(void) const
+{
+	return (this->damage);
+}
