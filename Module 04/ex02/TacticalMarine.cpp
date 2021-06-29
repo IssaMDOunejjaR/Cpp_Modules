@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 19:13:38 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 19:23:57 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:48:42 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ TacticalMarine::TacticalMarine(void)
 	return ;
 }
 
-TacticalMarine::TacticalMarine(TacticalMarine & instance)
+TacticalMarine::TacticalMarine(TacticalMarine const & instance)
 {
 	*this = instance;
 	return ;
@@ -37,8 +37,7 @@ TacticalMarine &	TacticalMarine::operator=(TacticalMarine const & instance)
 
 ISpaceMarine *	TacticalMarine::clone(void) const
 {
-	ISpaceMarine
-	return ();
+	return (new TacticalMarine(*this));
 }
 
 void	TacticalMarine::battleCry(void) const

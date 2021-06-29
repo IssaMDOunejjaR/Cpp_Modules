@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 12:57:43 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 19:02:01 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/29 19:57:34 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,41 @@ Squad::Squad(void)
 
 Squad::Squad(Squad & instance)
 {
-	*this = instance;
+	t_units *	tmp;
+
+	while (this->units != NULL)
+	{
+		tmp = this->units;
+		this->units = this->units->next;
+		delete tmp->unit;
+		delete tmp;
+	}
+	this->units = instance.units;
+	this->numberOfUnits = instance.numberOfUnits;
 	return ;
 }
 
 Squad::~Squad(void)
 {
+	t_units	*	tmp;
+
+	while (this->units != NULL)
+	{
+		tmp = this->units;
+		this->units = this->units->next;
+		delete tmp->unit;
+		delete tmp;
+	}
+	this->numberOfUnits = 0;
 	return ;
 }
 
 Squad &		Squad::operator=(Squad const & instance)
 {
+	if (this == &instance)
+		return (*this);
+	this->units = instance.units;
+	this->numberOfUnits = instance.numberOfUnits;
 	return (*this);
 }
 
@@ -40,22 +64,71 @@ int		Squad::getCount(void) const
 	return (this->numberOfUnits);
 }
 
+ISpaceMarine *	Squad::getUnit(int index) const
+{
+	int 		i = 0;
+	t_units	*	tmp = this->units;
+
+	while (i < index)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (tmp->unit);
+}
+
 int		Squad::push(ISpaceMarine * instance)
 {
-	t_units *	tmp;
-	t_units *	tmp2;
-
-	tmp = this->units;
-	while (tmp != NULL)
+	if (!instance)
+		return (this->getCount());
+	if (this->units == NULL)
 	{
-		if (tmp->unit == instance && tmp2 != NULL)
-		{
-			tmp2->next = tmp->next;
-			delete tmp->unit;
-		}
-		tmp2 = tmp;
-		tmp = tmp->next;
+		this->units = new t_units;
+		this->units->unit = instance;
+		this->units->next = NULL;
+		this->numberOfUnits = 1;
 	}
-	tmp->unit = instance;
+	else
+	{
+		t_units *	tmp = this->units;
+		t_units *	prev;
+
+		if (this->units != NULL && this->units->unit == instance)
+		{
+			this->units = this->units->next;
+			delete tmp;
+		}
+		else
+		{
+			while (tmp != NULL && tmp->unit != instance)
+			{
+				prev = tmp;
+				tmp = tmp->next;
+			}
+			if (tmp != NULL)
+			{
+				prev->next = tmp->next;
+				delete tmp;
+			}
+		}
+
+		this->numberOfUnits = 0;
+		tmp = this->units;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+
+		t_units *	newUnit = new t_units;
+
+		newUnit->unit = instance;
+		newUnit->next = NULL;
+
+		tmp->next = newUnit;
+		tmp = this->units;
+		while (tmp != NULL)
+		{
+			this->numberOfUnits += 1;
+			tmp = tmp->next;
+		}
+	}
 	return (this->getCount());
 }

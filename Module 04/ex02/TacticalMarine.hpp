@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 19:04:08 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 19:10:17 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:35:31 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	TacticalMarine: public ISpaceMarine
 {
 	public:
 		TacticalMarine(void);
-		TacticalMarine(TacticalMarine & instance);
+		TacticalMarine(TacticalMarine const & instance);
 		~TacticalMarine(void);
 
 		TacticalMarine &	operator=(TacticalMarine const & instance);

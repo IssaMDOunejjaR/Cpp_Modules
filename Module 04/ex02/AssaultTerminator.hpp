@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 19:11:03 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 19:12:52 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/29 15:35:08 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <iostream>
 # include "ISpaceMarine.hpp"
 
-class	AssaultTerminator
+class	AssaultTerminator: public ISpaceMarine
 {
 	public:
 		AssaultTerminator(void);
-		AssaultTerminator(AssaultTerminator & instance);
+		AssaultTerminator(AssaultTerminator const & instance);
 		~AssaultTerminator(void);
 
 		AssaultTerminator &		operator=(AssaultTerminator const & instance);
