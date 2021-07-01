@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:08 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/29 20:14:11 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 12:15:38 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ AMateria::~AMateria(void)
 
 AMateria &      AMateria::operator=(AMateria const & instance)
 {
-    this->_type = instance.getType();
-    this->_xp = instance.getXP();
-    return ;
+	this->_type = instance.getType();
+	this->_xp = instance.getXP();
+	return (*this);
 }
 
 std::string const &     AMateria::getType(void) const

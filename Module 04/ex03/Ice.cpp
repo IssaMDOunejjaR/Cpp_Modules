@@ -6,37 +6,43 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:34 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/29 20:23:54 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 12:15:10 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void): AMateria("ice")
 {
-    this->_type = "ice";
-    return ;
+	return ;
 }
 
 Ice::Ice(Ice const & instance)
 {
     *this = instance;
-    return ;
+	return ;
 }
 
 Ice::~Ice(void)
 {
-    return ;
+	return ;
 }
 
 Ice &   Ice::operator=(Ice const & instance)
 {
-    this->_type = instance.getType();
-    this->_xp = instance.getXP();
-    return (*this);
+	this->_type = instance.getType();
+	this->_xp = instance.getXP();
+	return (*this);
 }
 
-AMateria *  AMateria::clone(void) const
+AMateria *  Ice::clone(void) const
 {
-    return (new AMateria());
+    return (new Ice(*this));
+}
+
+void	Ice::use(ICharacter & target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+	AMateria::use(target);
+	return ;
 }

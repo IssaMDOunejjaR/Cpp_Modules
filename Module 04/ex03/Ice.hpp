@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:28 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/29 20:18:09 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 12:08:09 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class   Ice: public AMateria
         Ice &   operator=(Ice const & instance);
 
         AMateria *  clone(void) const;
-        void        use(ICharater & target);
+        void        use(ICharacter & target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:14 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/29 20:13:55 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/06/30 14:55:35 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define AMATERIA_HPP
 
 # include <iostream>
+# include "ICharacter.hpp"
+
+class	ICharacter;
 
 class   AMateria
 {
