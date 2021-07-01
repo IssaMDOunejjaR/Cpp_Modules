@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:00:23 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/27 19:27:59 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:32:01 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class	AWeapon
 		int						getAPCost(void) const;
 		int						getDamage(void) const;
 		
-		virtual void	attack(void) const = 0;
+		virtual void			attack(void) const = 0;
 };
 
 #endif

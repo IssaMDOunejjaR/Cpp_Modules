@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 19:16:28 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 11:33:04 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 20:12:32 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int		main(void)
 
 	std::cout << *me;
 
-	Enemy* b = new RadScorpion();
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
+
+	Enemy* b = new RadScorpion();
 
 	me->equip(pr);
 	std::cout << *me;
@@ -38,6 +39,22 @@ int		main(void)
 	me->attack(b);
 	std::cout << *me;
 	me->attack(b);
+	std::cout << *me;
+
+	Enemy*	a = new SuperMutant();
+
+	me->equip(pf);
+	std::cout << *me;
+	me->attack(a);
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(a);
+	me->attack(a);
+	me->equip(pf);
+	std::cout << *me;
+	me->attack(a);
+	me->recoverAP();
+	me->attack(a);
 	std::cout << *me;
 
 	return (0);

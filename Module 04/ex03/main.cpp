@@ -6,16 +6,14 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:58:55 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/01 12:34:00 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:15:33 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include "ICharacter.hpp"
 #include "Character.hpp"
-#include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 
 int     main(void)

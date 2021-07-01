@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 20:00:10 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/01 12:37:27 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 13:57:42 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Character::Character(std::string const & name)
 
 Character::Character(Character const & instance)
 {
-	for (int i = 0; i < 4 && _inv[i] != NULL; i++) {
+	for (int i = 0; i < 4; i++) {
 		delete this->_inv[i];
 	}
 	this->_name = instance.getName();
@@ -49,7 +49,7 @@ Character::~Character(void)
 
 Character &		Character::operator=(Character const & instance)
 {
-	for (int i = 0; i < 4 && _inv[i] != NULL; i++) {
+	for (int i = 0; i < 4; i++) {
 		delete this->_inv[i];
 	}
 	this->_name = instance.getName();

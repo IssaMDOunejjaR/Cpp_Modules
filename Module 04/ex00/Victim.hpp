@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 13:03:27 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/27 18:51:45 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 20:14:37 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ class	Victim
 		std::string		name;
 
 	public:
-		
 		Victim(void);
 		Victim(std::string name);
 		Victim(Victim & instance);
-		~Victim(void);
+		virtual ~Victim(void);
 
 		Victim &	operator=(Victim const & instance);
 

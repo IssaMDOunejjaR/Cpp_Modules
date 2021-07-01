@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 13:03:53 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/27 18:52:02 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 20:14:15 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Peon: public Victim
 		Peon(void);
 		Peon(std::string name);
 		Peon(Peon & instance);
-		~Peon(void);
+		virtual ~Peon(void);
 
 		Peon &		operator=(Peon const & instance);
 

@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 10:32:27 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 10:36:05 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:47:16 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	SuperMutant: public Enemy
 	public:
 		SuperMutant(void);
 		SuperMutant(SuperMutant & instance);
-		~SuperMutant(void);
+		virtual ~SuperMutant(void);
 
 		SuperMutant &	operator=(SuperMutant const & instance);
 

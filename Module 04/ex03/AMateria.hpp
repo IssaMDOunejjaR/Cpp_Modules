@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:14 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/30 14:55:35 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 13:50:13 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class	ICharacter;
 
 class   AMateria
 {
-    protected:
-        std::string     _type;
-        unsigned int    _xp;
+	protected:
+		std::string     _type;
+		unsigned int    _xp;
 
     public:
         AMateria(void);

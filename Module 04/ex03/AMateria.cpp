@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:08 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/01 12:15:38 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 13:53:10 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ AMateria::AMateria(std::string const & type)
 
 AMateria::AMateria(AMateria const & instance)
 {
-    *this = instance;
-    return ;
+	*this = instance;
+	return ;
 }
 
 AMateria::~AMateria(void)

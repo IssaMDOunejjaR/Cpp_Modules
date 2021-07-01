@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 10:02:17 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/28 10:10:52 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:46:55 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	PlasmaRifle: public AWeapon
 	public:
 		PlasmaRifle(void);
 		PlasmaRifle(PlasmaRifle & instance);
-		~PlasmaRifle(void);
+		virtual ~PlasmaRifle(void);
 
 		PlasmaRifle &	operator=(PlasmaRifle const & instance);
 

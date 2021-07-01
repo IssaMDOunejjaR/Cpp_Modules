@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 12:57:43 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/29 19:57:34 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/01 15:26:53 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ Squad::Squad(Squad & instance)
 		delete tmp->unit;
 		delete tmp;
 	}
-	this->units = instance.units;
-	this->numberOfUnits = instance.numberOfUnits;
+	*this = instance;
 	return ;
 }
 
@@ -93,23 +92,11 @@ int		Squad::push(ISpaceMarine * instance)
 		t_units *	tmp = this->units;
 		t_units *	prev;
 
-		if (this->units != NULL && this->units->unit == instance)
+		while (tmp != NULL)
 		{
-			this->units = this->units->next;
-			delete tmp;
-		}
-		else
-		{
-			while (tmp != NULL && tmp->unit != instance)
-			{
-				prev = tmp;
-				tmp = tmp->next;
-			}
-			if (tmp != NULL)
-			{
-				prev->next = tmp->next;
-				delete tmp;
-			}
+			if (tmp->unit == instance)
+				return (this->getCount());
+			tmp = tmp->next;
 		}
 
 		this->numberOfUnits = 0;
