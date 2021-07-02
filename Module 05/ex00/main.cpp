@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 13:03:53 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/02 10:37:53 by iounejja         ###   ########.fr       */
+/*   Created: 2021/07/02 13:35:44 by iounejja          #+#    #+#             */
+/*   Updated: 2021/07/02 18:35:19 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#include "Bureaucrat.hpp"
 
-# include <iostream>
-# include "Victim.hpp"
-
-class	Peon: public Victim
+int		main(void)
 {
-	public:
-		Peon(void);
-		Peon(std::string name);
-		Peon(Peon & instance);
-		virtual ~Peon(void);
+	try {
+		Bureaucrat	b1("b1", 100);
 
-		Peon &		operator=(Peon const & instance);
+		std::cout << b1 << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 
-		void		getPolymorphed(void) const;
-};
-
-#endif
+	return (0);
+}

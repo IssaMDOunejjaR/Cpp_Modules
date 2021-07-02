@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 19:59:08 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/01 13:53:10 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/02 11:06:07 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ unsigned int    AMateria::getXP(void) const
 
 void    AMateria::use(ICharacter & target)
 {
+	(void)target;
     this->_xp += 10;
     return ;
 }

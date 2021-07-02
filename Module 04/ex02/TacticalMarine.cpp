@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 19:13:38 by iounejja          #+#    #+#             */
-/*   Updated: 2021/06/29 15:48:42 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/02 10:56:35 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ TacticalMarine::~TacticalMarine(void)
 
 TacticalMarine &	TacticalMarine::operator=(TacticalMarine const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 

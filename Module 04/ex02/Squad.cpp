@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 12:57:43 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/01 15:26:53 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/02 10:40:16 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int		Squad::push(ISpaceMarine * instance)
 	else
 	{
 		t_units *	tmp = this->units;
-		t_units *	prev;
 
 		while (tmp != NULL)
 		{

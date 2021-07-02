@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Worker.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/27 13:03:53 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/02 10:37:53 by iounejja         ###   ########.fr       */
+/*   Created: 2021/07/02 10:20:36 by iounejja          #+#    #+#             */
+/*   Updated: 2021/07/02 10:30:39 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef WORKER_HPP
+# define WORKER_HPP
 
-# include <iostream>
 # include "Victim.hpp"
 
-class	Peon: public Victim
+class	Worker: public Victim
 {
 	public:
-		Peon(void);
-		Peon(std::string name);
-		Peon(Peon & instance);
-		virtual ~Peon(void);
+		Worker(void);
+		Worker(std::string name);
+		Worker(Worker const & instance);
+		virtual ~Worker(void);
 
-		Peon &		operator=(Peon const & instance);
+		Worker&		operator=(Worker const & instance);
 
 		void		getPolymorphed(void) const;
 };
