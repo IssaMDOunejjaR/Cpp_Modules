@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 13:36:04 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/03 11:18:49 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/03 11:44:22 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
+
+class Form;
 
 class	Bureaucrat
 {
@@ -50,6 +53,7 @@ class	Bureaucrat
 		int					getGrade(void) const;
 		void				gradeIncrement(void);
 		void				gradeDecrement(void);
+		void				signForm(Form const & instance);
 };
 
 std::ostream&	operator<<(std::ostream & output, Bureaucrat const & instance);

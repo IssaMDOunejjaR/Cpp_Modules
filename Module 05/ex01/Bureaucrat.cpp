@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 13:35:36 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/03 14:52:17 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/03 15:09:27 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,14 @@ void	Bureaucrat::gradeDecrement(void)
 	this->_grade++;
 	if (this->getGrade() > 150)
 		throw Bureaucrat::GradeTooLowException();
+	return ;
+}
+
+void	Bureaucrat::signForm(Form const & instance)
+{
+	if (instance.getSigned())
+		std::cout << this->getName() << " signs " << instance.getName() << std::endl;
+	else
+		std::cout << this->getName() << " cannot sign " << instance.getName() << " because the grade is to low" << std::endl;
 	return ;
 }

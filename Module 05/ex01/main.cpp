@@ -6,22 +6,20 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 13:35:44 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/03 11:21:42 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/03 11:55:39 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int		main(void)
 {
 	try {
-		Bureaucrat	b1("b1", 150);
-		Bureaucrat	b2("b2", 2);
+		Bureaucrat	b1("b1", 15);
+		Form		f1("f1", 10 , 50);
 
-		std::cout << b1 << std::endl;
-		std::cout << b2 << std::endl;
-		b1.gradeIncrement();
-		std::cout << b1 << std::endl;
+		f1.beSigned(b1);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;

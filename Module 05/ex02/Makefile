@@ -6,16 +6,18 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 13:35:01 by iounejja          #+#    #+#              #
-#    Updated: 2021/07/03 09:10:19 by iounejja         ###   ########.fr        #
+#    Updated: 2021/07/03 16:08:59 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC	= bureaucrat
+EXEC	= a.out
 CC		= clang++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= 
 LIB		= lib.a
 SRCS	= main.cpp \
-			Bureaucrat.cpp
+			Bureaucrat.cpp \
+			AForm.cpp \
+			ShrubberyCreationForm.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all: $(EXEC)
@@ -24,7 +26,7 @@ $(EXEC): $(OBJS)
 	ar rcs $(LIB) $(OBJS)
 	$(CC) $(FLAGS) $(LIB) -o $(EXEC)
 
-%.o: %.cpp Bureaucrat.hpp
+%.o: %.cpp Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
