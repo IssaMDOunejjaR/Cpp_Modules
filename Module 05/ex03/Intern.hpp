@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 15:12:42 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 10:40:13 by iounejja         ###   ########.fr       */
+/*   Created: 2021/07/04 11:29:01 by iounejja          #+#    #+#             */
+/*   Updated: 2021/07/04 11:43:55 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
 # include "Form.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
-class	RobotomyRequestForm: public Form
+class	Intern
 {
-	RobotomyRequestForm(void);
-
-	std::string	_target;
-
 	public:
-		RobotomyRequestForm(std::string const & target);
-		RobotomyRequestForm(RobotomyRequestForm const & instance);
-		~RobotomyRequestForm(void);
+		Intern(void);
+		Intern(Intern const & instance);
+		~Intern(void);
 
-		RobotomyRequestForm&	operator=(RobotomyRequestForm const & instance);
+		Intern&		operator=(Intern const & instance);
 
-		std::string		getTarget(void) const;
-		void			execute(Bureaucrat const & instance) const;
+		Form*	makeForm(std::string const & formName, std::string const & target) const;
 };
 
 #endif

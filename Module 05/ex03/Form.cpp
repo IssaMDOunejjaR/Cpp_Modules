@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 09:11:33 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 10:15:43 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 10:19:07 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ int		Form::getGradeExecute(void) const
 
 void	Form::beSigned(Bureaucrat & instance)
 {
-	if (instance.getGrade() < this->getGradeSign())
+	if (this->getSigned())
+		std::cout << "The form is already signed!" << std::endl;
+	else if (instance.getGrade() < this->getGradeSign())
 		this->_isSigned = true;
 	else
 		throw Form::GradeTooLowException();

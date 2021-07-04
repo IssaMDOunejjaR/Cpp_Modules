@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 09:11:39 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 09:29:33 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 10:45:48 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,7 @@ class Bureaucrat;
 
 class	Form
 {
-	class	GradeTooHighException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw()
-			{
-				return ("FormException: Grade is too high!");
-			}
-	};
-
-	class	GradeTooLowException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw()
-			{
-				return ("FormException: Grade is too low!");
-			}
-	};
-
+	Form(void);
 
 	std::string const	_name;
 	bool				_isSigned;
@@ -45,7 +28,33 @@ class	Form
 	int	const			_gradeExecute;
 
 	public:
-		Form(void);
+		class	GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("FormException: Grade is too high!");
+				}
+		};
+
+		class	GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("FormException: Grade is too low!");
+				}
+		};
+
+		class	UnsignedException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Form: The form is unsigned!");
+				}
+		};
+
 		Form(std::string const & name, int gradeSign, int gardeExecute);
 		Form(Form const & instance);
 		~Form(void);
@@ -56,8 +65,9 @@ class	Form
 		bool			getSigned(void) const;
 		int				getGradeSign(void) const;
 		int				getGradeExecute(void) const;
-
 		void			beSigned(Bureaucrat & instance);
+
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream&	operator<<(std::ostream & output, Form const & instance);

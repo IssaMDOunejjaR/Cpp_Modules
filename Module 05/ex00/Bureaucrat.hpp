@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 13:36:04 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/03 11:18:49 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 09:27:23 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Bureaucrat
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("Grade is to high!");
+				return ("BureaucratException: Grade is to high!");
 			} 
 	};
 
@@ -31,7 +31,7 @@ class	Bureaucrat
 		public:
 			virtual const char * what() const throw()
 			{
-				return ("Grade is to low!");
+				return ("BureaucratException: Grade is to low!");
 			}
 	};
 

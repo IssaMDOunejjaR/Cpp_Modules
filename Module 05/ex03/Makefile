@@ -6,7 +6,7 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 13:35:01 by iounejja          #+#    #+#              #
-#    Updated: 2021/07/04 11:51:27 by iounejja         ###   ########.fr        #
+#    Updated: 2021/07/04 11:50:54 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS	= main.cpp \
 			Form.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp \
+			Intern.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all: $(EXEC)
