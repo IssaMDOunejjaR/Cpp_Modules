@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 15:12:48 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 11:50:06 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:18:19 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 

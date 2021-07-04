@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 09:11:33 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 10:15:43 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 15:29:01 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Form&	Form::operator=(Form const & instance)
 
 std::ostream&	operator<<(std::ostream & output, Form const & instance)
 {
-	output << "The " << instance.getName() << " form need " << instance.getGradeSign() << " to be signed, and " << instance.getGradeExecute() << " to be executed!";
+	output << "The " << instance.getName() << " form need " << instance.getGradeSign() << " grade to be signed, and " << instance.getGradeExecute() << " grade to be executed!";
 	return (output);
 }
 

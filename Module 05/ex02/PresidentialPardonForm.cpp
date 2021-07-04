@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 15:13:09 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 11:51:02 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:19:46 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 PresidentialPardonForm&		PresidentialPardonForm::operator=(PresidentialPardonForm const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 

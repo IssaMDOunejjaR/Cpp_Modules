@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 15:12:48 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 11:51:07 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 15:39:34 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 
@@ -46,6 +48,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const & instance) const
 		throw Form::UnsignedException();
 
 	std::cout << "* drilling noises *" << std::endl;
-	std::cout << this->getTarget() << " has been robotomized successfully 50\% of the time" << std::endl;
+	if (rand() % 100 > 50)
+		std::cout << this->getTarget() << " has been robotomized successfully 50\% of the time" << std::endl;
+	else
+		std::cout << this->getTarget() << " robotomized failed!" << std::endl;
 	return ;
 }

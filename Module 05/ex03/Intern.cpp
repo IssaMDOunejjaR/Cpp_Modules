@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 11:28:55 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 11:48:23 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:18:59 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ Intern::~Intern(void)
 
 Intern&		Intern::operator=(Intern const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 
@@ -46,6 +48,7 @@ Form*	Intern::makeForm(std::string const & formName, std::string const & target)
 			std::cout << "Intern creates " << formName << std::endl;
 			return (arr[i]);
 		}
+		delete arr[i];
 	}
 
 	std::cout << "Unknown form name!" << std::endl;

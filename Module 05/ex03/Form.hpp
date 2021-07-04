@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 09:11:39 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 10:45:48 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:13:51 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class	Form
 
 		Form(std::string const & name, int gradeSign, int gardeExecute);
 		Form(Form const & instance);
-		~Form(void);
+		virtual ~Form(void);
 
 		Form&	operator=(Form const & instance);
 

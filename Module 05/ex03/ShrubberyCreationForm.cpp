@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 15:12:16 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 11:50:12 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 12:18:03 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & insta
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 

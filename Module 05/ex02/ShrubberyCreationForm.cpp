@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 15:12:16 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/04 11:51:12 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/04 15:35:57 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & insta
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & instance)
 {
+	if (this == &instance)
+		return (*this);
 	return (*this);
 }
 
@@ -47,7 +49,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & instance) const
 
 	std::ofstream	file(this->getTarget() + "_shrubbery");
 
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 10; i++) {
 		file << "      .*.              .*.              .*.              .*.              .*.      " << std::endl;
 		file << "      ***              ***              ***              ***              ***      " << std::endl;
 		file << "     *****            *****            *****            *****            *****     " << std::endl;
