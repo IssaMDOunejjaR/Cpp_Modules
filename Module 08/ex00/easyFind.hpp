@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyFind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:41:44 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/10 12:28:30 by iounejja         ###   ########.fr       */
+/*   Created: 2021/07/08 14:17:20 by iounejja          #+#    #+#             */
+/*   Updated: 2021/07/10 16:53:31 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "iter.hpp"
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-template <typename T>
-void	print(T value) {
-	std::cout << value << std::endl;
-}
+# include <algorithm>
 
-int		main(void) {
-	int tab1[] = { 0, 1, 2, 3, 4 };
-	int tab2[] = { 5, 6, 7, 8, 9 };
-
-	iter(tab1, 5, print);
-	iter(tab2, 5, print);
+template<typename T>
+int		easyFind(T container, int value) {
+	if (std::binary_search(container.begin(), container.end(), value))
+		return (1);
 	return (0);
 }
+
+#endif

@@ -6,18 +6,27 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:58:50 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/07 20:20:09 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/09 18:48:28 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+# include <iostream>
+
 template <typename T>
 class	Array
 {
-	T*	_array;
-	int	_index;
+	T*				_array;
+	unsigned int	_index;
+
+	class	OutOfLimitsExeception: public std::exception
+	{
+		virtual const char * what() const throw() {
+			return ("index out of limits!");
+		}
+	};
 
 	public:
 		Array<T>(void) {
@@ -28,7 +37,7 @@ class	Array
 		Array<T>(unsigned int n) {
 			this->_array = new T[n];
 			this->_index = n - 1;
-			for (int i = 0; i < n; i++)
+			for (unsigned int i = 0; i < n; i++)
 				this->_array[i] = 0;
 		}
 
@@ -41,7 +50,7 @@ class	Array
 		}
 
 		Array<T>&	operator=(Array<T> const & instance) {
-			delete [] this->_array;
+			// delete [] this->_array;
 			this->_array = new T[instance.size()];
 			for (int i = 0; i < instance.size(); i++)
 				this->_array[i] = instance._array[i];
@@ -49,10 +58,8 @@ class	Array
 		}
 
 		T&		operator[](unsigned int n) {
-			if (n > this->_index) {
-				std::cout << "index out of bounds" << std::endl;
-				return (this->_array[0]);
-			}
+			if (n > this->_index)
+				throw Array::OutOfLimitsExeception();
 			return (this->_array[n]);
 		}
 

@@ -6,11 +6,11 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/05 14:04:51 by iounejja          #+#    #+#              #
-#    Updated: 2021/07/06 11:58:50 by iounejja         ###   ########.fr        #
+#    Updated: 2021/07/09 11:47:27 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC	= a.out
+EXEC	= convert
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
 LIB		= lib.a

@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 19:27:32 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/07 19:37:40 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/07/10 12:25:03 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,22 @@ int		main(void) {
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	return 0;
+
+	int num1 = 156;
+	int num2 = 87465;
+
+	::swap(num1, num2);
+	std::cout << "num1 = " << num1 << ", num2 = " << num2 << std::endl;
+	std::cout << "min( num1, num2 ) = " << ::min( num1, num2 ) << std::endl;
+	std::cout << "max( num1, num2 ) = " << ::max( num1, num2 ) << std::endl;
+
+	std::string str1 = "str_1";
+	std::string str2 = "str_2";
+
+	::swap(str1, str2);
+	std::cout << "str1 = " << str1 << ", str2 = " << str2 << std::endl;
+	std::cout << "min( str1, str2 ) = " << ::min( str1, str2 ) << std::endl;
+	std::cout << "max( str1, str2 ) = " << ::max( str1, str2 ) << std::endl;
 
 	return (0);
 }

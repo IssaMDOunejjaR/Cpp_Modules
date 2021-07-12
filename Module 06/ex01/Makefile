@@ -6,13 +6,13 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/05 14:04:51 by iounejja          #+#    #+#              #
-#    Updated: 2021/07/05 14:54:47 by iounejja         ###   ########.fr        #
+#    Updated: 2021/07/09 17:45:38 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 EXEC	= a.out
 CC		= clang++
-FLAGS	= 
+FLAGS	= -Wall -Wextra -Werror
 LIB		= lib.a
 SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)

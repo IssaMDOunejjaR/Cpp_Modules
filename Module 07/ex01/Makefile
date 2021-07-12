@@ -6,7 +6,7 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/05 14:04:51 by iounejja          #+#    #+#              #
-#    Updated: 2021/07/07 19:41:38 by iounejja         ###   ########.fr        #
+#    Updated: 2021/07/09 18:45:54 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ $(EXEC): $(OBJS)
 		ar rcs $(LIB) $(OBJS)
 		$(CC) $(FLAGS) $(LIB) -o $(EXEC)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp iter.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

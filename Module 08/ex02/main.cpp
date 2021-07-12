@@ -5,24 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 19:41:44 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/10 12:28:30 by iounejja         ###   ########.fr       */
+/*   Created: 2021/07/08 15:41:03 by iounejja          #+#    #+#             */
+/*   Updated: 2021/07/10 16:47:43 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "iter.hpp"
-
-template <typename T>
-void	print(T value) {
-	std::cout << value << std::endl;
-}
+#include "mutantstack.hpp"
 
 int		main(void) {
-	int tab1[] = { 0, 1, 2, 3, 4 };
-	int tab2[] = { 5, 6, 7, 8, 9 };
+	MutantStack<int> mstack;
 
-	iter(tab1, 5, print);
-	iter(tab2, 5, print);
+	mstack.push(5);
+	mstack.push(17);
+
+	std::cout << mstack.top() << std::endl;
+
+	mstack.pop();
+
+	std::cout << mstack.size() << std::endl;
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+
+	//[...]
+
+	mstack.push(0);
+
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+
 	return (0);
 }
