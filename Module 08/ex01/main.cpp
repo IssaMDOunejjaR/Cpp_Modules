@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 14:39:23 by iounejja          #+#    #+#             */
-/*   Updated: 2021/09/03 12:50:58 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/09/03 12:59:40 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int		main(void) {
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-
 
 	return (0);
 }

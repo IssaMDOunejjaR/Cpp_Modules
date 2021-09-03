@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 14:39:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/09/02 13:19:23 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/09/03 12:59:09 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ Span::Span(Span const & instance) {
 }
 
 Span::~Span(void) {
+	this->_lst.clear();
+	this->_len = 0;
+	this->_capacity = 0;
 	return ;
 }
 
