@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 15:41:16 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/13 13:49:17 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/09/03 12:43:19 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class	MutantStack: public std::stack<T>
 		}
 
 		MutantStack<T>&		operator=(MutantStack<T> const & instance) {
-			std::stack<T>::operatpr=(instance);
+			std::stack<T>::operator=(instance);
 			return (*this);
 		}
 

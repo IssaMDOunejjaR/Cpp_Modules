@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 14:39:09 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/11 10:41:24 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/09/03 12:48:20 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class	Span
 	};
 
 	std::vector<int> 	_lst;
+	int					_len;
 	int					_capacity;
 
 	public:
@@ -48,11 +49,12 @@ class	Span
 		int		shortestSpan(void) const;
 		int		longestSpan(void) const;
 
-		template <typename Iterator>
-		void	addNumber(Iterator begin, Iterator end) {
-			if (end - begin > this->_capacity)
+		template <typename T>
+		void	addNumber(T container) {
+			if ((container.end() - container.begin()) + this->_len > this->_capacity)
 				throw Span::OutOfSpaceException();
-			std::copy(begin, end, std::back_inserter(this->_lst));
+			std::copy(container.begin(), container.end(), std::back_inserter(this->_lst));
+			this->_len += container.end() - container.begin();
 		}
 };
 

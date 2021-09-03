@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 15:41:03 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/13 13:40:49 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/09/02 14:33:06 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,16 @@ int		main(void) {
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	MutantStack<int> myStack;
+
+	myStack.push(100);
+	myStack.push(101);
+	myStack.push(102);
+	myStack.push(103);
+
+	for (MutantStack<int>::iterator it = myStack.begin(); it != myStack.end(); it++)
+		std::cout << *it << std::endl;
 
 	return (0);
 }

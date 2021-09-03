@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 14:39:01 by iounejja          #+#    #+#             */
-/*   Updated: 2021/07/11 10:51:44 by iounejja         ###   ########.fr       */
+/*   Updated: 2021/09/02 13:19:23 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Span::Span(void) {
 }
 
 Span::Span(unsigned int N) {
+	this->_len = 0;
 	this->_lst.reserve(N);
 	this->_capacity = N;
 }
@@ -31,6 +32,7 @@ Span::~Span(void) {
 
 Span&	Span::operator=(Span const & instance) {
 	this->_lst = instance._lst;
+	this->_len = instance._len;
 	this->_capacity = instance._capacity;
 	return (*this);
 }
@@ -39,6 +41,7 @@ void	Span::addNumber(int number) {
 	if (this->_lst.size() >= this->_capacity)
 		throw Span::OutOfSpaceException();
 	this->_lst.push_back(number);
+	this->_len += 1;
 }
 
 int		Span::shortestSpan(void) const {
@@ -49,9 +52,8 @@ int		Span::shortestSpan(void) const {
 	std::vector<int>::iterator ite = (const_cast<Span *>(this))->_lst.end();
 
 	std::sort(itb, ite);
-	int firstValue = *(this->_lst.begin());
-	int secondValue = *(this->_lst.begin() + 1);
-	return (secondValue - firstValue);
+
+	return (*(this->_lst.begin() + 1) - *(this->_lst.begin()));
 }
 
 int		Span::longestSpan(void) const {
